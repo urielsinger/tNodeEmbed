@@ -11,6 +11,8 @@
 | Cora                 	|     -    	|     +    	|  12,588 	|   47,675  	|    20    	|        39        	|
 | DBLP                 	|     +    	|     -    	| 416,204 	| 1,436,225 	|    23    	|         9        	|
 
+Notice that for the arXiv hep-ph, Facebook Wall Posts, CollegeMsg, Slashdot, and DBLP graphs, multiple edges may occur from one node to another at different timestamps. Given a timestamp, if multiple edges exist, they are collapsed into a single edge, weighted according to the number of original edges, thus rendering a weighted graph, as marked in the Table.
+
 ## [arXiv hep-ph.](http://konect.uni-koblenz.de/networks/ca-cit-HepPh)
 A research publication graph, where each node is an author and a temporal undirected edge represents a common publication with a timestamp of the publication date.
 Time steps reflect a monthly granularity between March 1992 and December 1999.
@@ -29,6 +31,7 @@ Time steps reflect a daily granularity between April 15th, 2004 and October 26th
 
 ## PPI.
 The protein-protein interactions (PPI) graph includes protein as nodes, with edges connecting two proteins for which a biological interaction was observed. Numerous experiments have been conducted to discover such interactions. These are listed in [HINTdb](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5036632/), with the list of all articles mentioning each interaction. We consider the interaction discovery date as the edge's timestamp. In a pre-processing step, we set it as the earliest publication date of its associated articles. We work in a yearly granularity between 1970 and 2015.
+
 We publicly release this new temporal graph.
 
 ## [Slashdot.](http://konect.uni-koblenz.de/networks/slashdot-threads)
@@ -41,5 +44,3 @@ A research publication graph, where each node represents a publication, labeled 
 A co-authorship graph, focused on the Computer Science domain. Each node represents an author and is labeled using conference keywords representing L=15 research fields: verification testing, computer graphics, computer vision, networking, data mining, operating systems, computer-human interaction, software engineering, machine learning, bioinformatics, computing theory, security, information retrieval, computational linguistics, and unknown.
 Temporal undirected edges represent co-authorship of a paper, with timestamps of the paper's publication date. 
 Time steps reflect a yearly granularity between 1990 and 1998.
-
-Notice that for the arXiv hep-ph, Facebook Wall Posts, CollegeMsg, Slashdot, and DBLP graphs, multiple edges may occur from one node to another at different timestamps. Given a timestamp, if multiple edges exist, they are collapsed into a single edge, weighted according to the number of original edges, thus rendering a weighted graph, as marked in the Table above.
