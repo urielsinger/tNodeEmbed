@@ -7,6 +7,7 @@ This repository provides a reference implementation of *tNodeEmbed* as described
 > https://www.ijcai.org/proceedings/2019/0640.pdf<Insert paper link>
 
 The *tNodeEmbed* algorithm learns temporal representations for nodes in any (un)directed, (un)weighted temporal graph.
+For Further explination of tNodeEmbed please visit it's blog in [Medium](https://medium.com/@urielsinger/tnodeembed-node-embedding-over-temporal-graphs-b7bcbf59938f). 
 
 ### Basic Usage
 
@@ -33,6 +34,7 @@ Where X and y are dictionaries with keys 'train' and 'test'.
 
 Training time!
 ```python
+X['train'] = graph_utils.nodes2embeddings(X['train'], tnodeembed.graph_nx, tnodeembed.train_time_steps)
 tnodeembed.fit(X['train'] ,y['train'])
 ```
 Or by using a generator: 
@@ -44,7 +46,8 @@ tnodeembed.fit_generator(generator, steps_per_epoch)
     
 And prediction:
 ```python
-tnodeembed.predict(X['test']
+X['test'] = graph_utils.nodes2embeddings(X['test'], tnodeembed.graph_nx, tnodeembed.train_time_steps)
+tnodeembed.predict(X['test'])
 ```
 Or by using a generator:
 ```python
@@ -53,7 +56,7 @@ generator = loader.dataset_generator(X['test'], y['test'], tnodeembed.graph_nx, 
 tnodeembed.predict_generator(generator, steps)
 ```
 
-A full flow example and comparission to node2vec can be found in ``main.py``
+A full flow example and comparission to node2vec can be found in [``main.py``](src/main.py)
 
 ### Requirements
  - python>=3.6
