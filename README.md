@@ -7,7 +7,7 @@ This repository provides a reference implementation of *tNodeEmbed* as described
 > https://www.ijcai.org/proceedings/2019/0640.pdf<Insert paper link>
 
 The *tNodeEmbed* algorithm learns temporal representations for nodes in any (un)directed, (un)weighted temporal graph.
-For Further explination of tNodeEmbed please visit it's blog in [Medium](https://medium.com/@urielsinger/tnodeembed-node-embedding-over-temporal-graphs-b7bcbf59938f). 
+For Further explanation of tNodeEmbed please visit it's blog in [Medium](https://medium.com/@urielsinger/tnodeembed-node-embedding-over-temporal-graphs-b7bcbf59938f). 
 
 ### Basic Usage
 
