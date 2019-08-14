@@ -1,0 +1,9 @@
+python>=3.6
+networkx
+numpy
+tqdm
+pandas
+keras
+matplotlib
+node2vec
+sklearn
