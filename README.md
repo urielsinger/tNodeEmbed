@@ -9,6 +9,17 @@ This repository provides a reference implementation of *tNodeEmbed* as described
 The *tNodeEmbed* algorithm learns temporal representations for nodes in any (un)directed, (un)weighted temporal graph.
 For Further explanation of tNodeEmbed please visit it's blog in [Medium](https://medium.com/@urielsinger/tnodeembed-node-embedding-over-temporal-graphs-b7bcbf59938f). 
 
+### Requirements
+ - python>=3.6
+ - networkx
+ - numpy
+ - tqdm
+ - pandas
+ - keras
+ - matplotlib
+ - node2vec
+ - sklearn
+
 ### Basic Usage
 
 Start by creating a networkx graph where each edge has a 'time' attribute. Given a DataFrame with 'source','target' and 'time' columns, you can execute the following:
@@ -58,17 +69,6 @@ tnodeembed.predict_generator(generator, steps)
 
 A full flow example and comparission to node2vec can be found in [``main.py``](src/main.py)
 
-### Requirements
- - python>=3.6
- - networkx
- - numpy
- - tqdm
- - pandas
- - keras
- - matplotlib
- - node2vec
- - sklearn
-
 ### Citing
 If you find *tNodeEmbed* useful for your research, please consider citing the following paper:
 
@@ -90,3 +90,5 @@ If you find *tNodeEmbed* useful for your research, please consider citing the fo
 ### Miscellaneous
 
 Please send any questions you might have about the code and/or the algorithm to <urielsinger@cs.technion.ac.il>.
+
+Note: This is only a beta version of the tNodeEmbed algorithm. There are other amendments that need to be made before this work can be relied upon.
