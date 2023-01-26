@@ -178,7 +178,7 @@ class tNodeEmbed(TaskModel):
 
             node2vec = Node2Vec(graph=cur_graph_nx, quiet=True, **n2vargs)
             ntv_model = node2vec.fit()
-            ntv = {node: ntv_model[str(node)] for node in cur_graph_nx.nodes()}
+            ntv = {node: ntv_model.wv[str(node)] for node in cur_graph_nx.nodes()}
             nx.set_node_attributes(graph_nx, ntv, time)
 
         return graph_nx
