@@ -9,7 +9,7 @@ time_now = datetime.now().strftime('%y%m%d_%H%M%S')
 params = {
 'results_path': join(r"../results", f"{platform.node()}_{time_now}_{experiment_name}"),
 'dataset': 'PPI',
-'task': TLP,#TLP, NC
+'task': NP,#TLP, NC
 'test_size': 0.2,
 'train_skip': 100,  # down sample the training set
 'n2vargs': {'workers': 4},
