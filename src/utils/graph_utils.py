@@ -94,7 +94,9 @@ def get_graph_T(graph_nx, min_time=-np.inf, max_time=np.inf, return_df=False):
             graph_df['to_class'] = graph_df['to'].map(lambda node: node2label[node])
         return graph_df
     else:
-        sub_graph_nx = nx.from_pandas_edgelist(graph_df, 'from', 'to', list(attr_keys), create_using=type(graph_nx)())
+        # edge_attr cannot be an empty list
+        edge_attr = None if not attr_keys else list(attr_keys)
+        sub_graph_nx = nx.from_pandas_edgelist(graph_df, 'from', 'to', edge_attr, create_using=type(graph_nx)())
 
         # add node attributes
         for node, attr in graph_nx.nodes(data=True):
