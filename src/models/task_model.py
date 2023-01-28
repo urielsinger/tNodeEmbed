@@ -55,7 +55,7 @@ class TaskModel(ABC):
         Returns:
             prediction of the static model
         '''
-        return self.model.predict_generator(generator, steps)
+        return self.model.predict(generator, steps=steps)
 
     @staticmethod
     @abstractmethod
