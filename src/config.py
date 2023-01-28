@@ -15,6 +15,6 @@ params = {
 'n2vargs': {'workers': 4},
 'keras_args':
     {'batch_size': 64,
-     'nb_epoch': 10,
+     'epochs': 10,
      'nb_worker': 4}
 }
