@@ -33,7 +33,8 @@ class TaskModel(ABC):
         X_sample, y_sample = next(generator)
         self.model = self._get_model(self.task, X_sample.shape[1:], latent_dim=X_sample.shape[-1], num_classes=y_sample.shape[1])
 
-        self.model.fit_generator(generator, steps_per_epoch, **keras_args)
+        self.model.fit(generator, steps_per_epoch=steps_per_epoch, **keras_args)
+        #self.model.fit_generator(generator, steps_per_epoch, **keras_args)
 
     def predict(self, X):
         '''
