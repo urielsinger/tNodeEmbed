@@ -16,5 +16,5 @@ params = {
 'keras_args':
     {'batch_size': 64,
      'epochs': 10,
-     'nb_worker': 4}
+     'workers': 4}
 }
