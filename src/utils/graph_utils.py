@@ -233,7 +233,7 @@ def nodes2embeddings(X, graph_nx, train_time_steps, dimensions, node2embedding=N
             return node2embedding[X]
         embeddings = []
         for train_time_step in train_time_steps:
-            embedding = graph_nx.node[X][train_time_step] if train_time_step in graph_nx.node[X] else np.zeros(dimensions)
+            embedding = graph_nx.nodes[X][train_time_step] if train_time_step in graph_nx.nodes[X] else np.zeros(dimensions)
             embeddings.append(embedding)
         return np.array(embeddings)
     else:
