@@ -23,10 +23,14 @@ def run(**kwargs):
     keras_args = kwargs['keras_args']
     batch_size = keras_args.pop('batch_size', 32)
     steps_per_epoch = ceil(len(X['train']) / batch_size)
+
     # tNodeEmbed
+    print("Fit tNodeEmbed model")
     generator = loader.dataset_generator(X['train'], y['train'], tnodeembed.graph_nx, tnodeembed.train_time_steps, batch_size=batch_size)
     tnodeembed.fit_generator(generator, steps_per_epoch, **keras_args)
+    
     # node2vec
+    print("Fit static model")
     static_model = models.StaticModel(task=task)
     generator = loader.dataset_generator(X['train'], y['train'], tnodeembed.graph_nx, [max(tnodeembed.train_time_steps)], batch_size=batch_size)
     static_model.fit_generator(generator, steps_per_epoch, **keras_args)
