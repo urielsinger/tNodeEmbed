@@ -57,7 +57,7 @@ class tNodeEmbed(TaskModel):
                                  samples in the given graph_nx, then we take only int(N/train_skip) samples for train.
                                  This is highly important in large graphs.
         Returns:
-            X: dict - with keys 'train', 'test'. each value is a np.array of the dataset, where each entery is a sample
+            X: dict - with keys 'train', 'test'. each value is a np.array of the dataset, where each entry is a sample
                       with the embeddings.
             y: dict - with keys 'train', 'test', each value is a np.array of the dataset, where y[key][i] is the label
                       of X[key][i] for the given task.
