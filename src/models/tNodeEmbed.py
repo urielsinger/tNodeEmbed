@@ -57,7 +57,7 @@ class tNodeEmbed(TaskModel):
                                  samples in the given graph_nx, then we take only int(N/train_skip) samples for train.
                                  This is highly important in large graphs.
         Returns:
-            X: dict - with keys 'train', 'test'. each value is a np.array of the dataset, where each entery is a sample
+            X: dict - with keys 'train', 'test'. each value is a np.array of the dataset, where each entry is a sample
                       with the embeddings.
             y: dict - with keys 'train', 'test', each value is a np.array of the dataset, where y[key][i] is the label
                       of X[key][i] for the given task.
@@ -178,7 +178,7 @@ class tNodeEmbed(TaskModel):
 
             node2vec = Node2Vec(graph=cur_graph_nx, quiet=True, **n2vargs)
             ntv_model = node2vec.fit()
-            ntv = {node: ntv_model[str(node)] for node in cur_graph_nx.nodes()}
+            ntv = {node: ntv_model.wv[str(node)] for node in cur_graph_nx.nodes()}
             nx.set_node_attributes(graph_nx, ntv, time)
 
         return graph_nx

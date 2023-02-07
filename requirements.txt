@@ -1,9 +1,11 @@
-python>=3.6
+#python>=3.6
 networkx
-numpy
+numpy==1.24.1
 tqdm
 pandas
 keras
 matplotlib
 node2vec
 sklearn
+scipy==1.10.0
+
